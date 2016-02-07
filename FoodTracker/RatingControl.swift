@@ -21,9 +21,19 @@ class RatingControl: UIView {
         
         super.init(coder: aDecoder)
         
+        let filledStarImage = UIImage(named: "FilledStar")
+        let emptyStarImage = UIImage(named: "EmptyStar")
+        
         for _ in 0..<5 {
+            
             let button = UIButton()
-            button.backgroundColor = UIColor.redColor()
+            
+            button.setImage(emptyStarImage, forState: .Normal)
+            button.setImage(filledStarImage, forState: .Selected)
+            button.setImage(filledStarImage, forState: [.Highlighted, .Selected])
+            
+            button.adjustsImageWhenHighlighted = false
+            
             button.addTarget(self, action: "ratingButtonTapped:", forControlEvents: .TouchDown)
             ratingButtons += [button]
             addSubview(button)
