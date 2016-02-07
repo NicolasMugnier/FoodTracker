@@ -1,2 +1,2 @@
-# FoodTraker
+# FoodTracker
 Start developing IOS apps
