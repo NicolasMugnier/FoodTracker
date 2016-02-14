@@ -14,6 +14,13 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    /*
+    This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
+    or constructed as part of adding a new meal.
+    */
+    var meal: Meal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +75,17 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         presentViewController(imagePickerController, animated: true, completion: nil)
         
     }
+    
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(saveButton === sender){
+            let name = nameTextField.text ?? ""
+            let photo = photoImageView.image
+            let rating = ratingControl.rating
+            meal = Meal(name: name, photo: photo, rating: rating)
+        }
+    }
+    
 
 }
 
