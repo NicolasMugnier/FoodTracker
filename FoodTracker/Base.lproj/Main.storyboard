@@ -42,6 +42,7 @@
                                     <outlet property="nameLabel" destination="gMS-V3-hqq" id="6br-rv-sUK"/>
                                     <outlet property="photoImageView" destination="LMV-MP-ovC" id="vy7-ZN-vi6"/>
                                     <outlet property="ratingControl" destination="bDM-cN-J8A" id="pQH-yQ-QMW"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="MHC-CA-gCd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -137,7 +138,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2265" y="150"/>
+            <point key="canvasLocation" x="2235" y="150"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sYk-33-8W0">
@@ -173,10 +174,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ik6-bc-YjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1453" y="150"/>
+            <point key="canvasLocation" x="1471" y="492"/>
         </scene>
     </scenes>
     <resources>
         <image name="DefaultPhoto" width="540" height="540"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MHC-CA-gCd"/>
+    </inferredMetricsTieBreakers>
 </document>
